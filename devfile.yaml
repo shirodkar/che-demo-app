@@ -141,6 +141,9 @@ components:
 - volume:
     size: 2Gi
   name: pgdata
+- volume:
+    size: 2Gi
+  name: kube-api-access-dndsn
 commands:
 - exec:
     commandLine: mvn package
