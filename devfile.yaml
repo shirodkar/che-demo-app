@@ -115,7 +115,7 @@ components:
     endpoints:
       - name: parksmap
         targetPort: 8080
-        exposure: public
+        exposure: internal
 - name: oc-cli
   container:
     args:
