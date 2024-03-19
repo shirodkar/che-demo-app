@@ -46,7 +46,7 @@ components:
     - name: JAVA_HOME 
       value: /etc/alternatives/jre_17
     - name: API_PORT
-      value: '8080'
+      value: '8081'
     - name: DB_USER
       value: postgres
     - name: DB_PWD
@@ -70,7 +70,7 @@ components:
       exposure: public
       protocol: https
     - name: https-quarkus
-      targetPort: 8080
+      targetPort: 8081
       exposure: public
       protocol: https
     - name: debug
@@ -114,8 +114,8 @@ components:
       path: /var/run/secrets/kubernetes.io/serviceaccount
     endpoints:
       - name: parksmap
-        targetPort: 8888
-        exposure: internal
+        targetPort: 8080
+        exposure: public
 - name: oc-cli
   container:
     args:
