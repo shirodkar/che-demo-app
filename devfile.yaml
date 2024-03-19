@@ -105,10 +105,17 @@ components:
   container:
     # image: image-registry.openshift-image-registry.svc:5000/dev-tools/postgresql-15-c9s:c9s
     image: quay.io/openshiftroadshow/parksmap:latest
+    memoryRequest: 128M
+    memoryLimit: 512M
+    sourceMapping: /projects
+    mountSources: true
+    volumeMounts:
+    - name: kube-api-access-dndsn
+      path: /var/run/secrets/kubernetes.io/serviceaccount
     endpoints:
       - name: parksmap
         targetPort: 8888
-        exposure: public
+        exposure: internal
 - name: oc-cli
   container:
     args:
