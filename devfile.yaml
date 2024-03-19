@@ -101,6 +101,14 @@ components:
       - name: postgres
         targetPort: 5432
         exposure: internal
+- name: parksmap
+  container:
+    # image: image-registry.openshift-image-registry.svc:5000/dev-tools/postgresql-15-c9s:c9s
+    image: quay.io/openshiftroadshow/parksmap:latest
+    endpoints:
+      - name: parksmap
+        targetPort: 8888
+        exposure: public
 - name: oc-cli
   container:
     args:
